@@ -33,7 +33,7 @@ class MiddleCollectionViewCell: UICollectionViewCell {
 
 extension MiddleCollectionViewCell {
     private func setupCell() {
-        backgroundColor = .gray
+        backgroundColor = .white
         imageView.contentMode = .scaleAspectFit
         contentView.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
