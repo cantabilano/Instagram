@@ -7,23 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C8632D142B67389D00BD75E4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8632D132B67389D00BD75E4 /* ProfileViewController.swift */; };
+		C8632D512B68FCF000BD75E4 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8632D502B68FCF000BD75E4 /* CollectionModel.swift */; };
+		C8632D532B68FDF900BD75E4 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8632D522B68FDF900BD75E4 /* TopView.swift */; };
+		C8632D552B68FE3000BD75E4 /* MiddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8632D542B68FE3000BD75E4 /* MiddleView.swift */; };
+		C8632D572B68FE3900BD75E4 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8632D562B68FE3900BD75E4 /* BottomView.swift */; };
+		C8632D592B690A3B00BD75E4 /* MiddleViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8632D582B690A3B00BD75E4 /* MiddleViewCollectionViewCell.swift */; };
 		C8AAAC662B63D0000044EA9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AAAC652B63D0000044EA9C /* AppDelegate.swift */; };
 		C8AAAC682B63D0000044EA9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AAAC672B63D0000044EA9C /* SceneDelegate.swift */; };
-		C8AAAC6A2B63D0000044EA9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AAAC692B63D0000044EA9C /* ViewController.swift */; };
-		C8AAAC6D2B63D0000044EA9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8AAAC6B2B63D0000044EA9C /* Main.storyboard */; };
+		C8AAAC6A2B63D0000044EA9C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AAAC692B63D0000044EA9C /* MainViewController.swift */; };
 		C8AAAC6F2B63D0020044EA9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8AAAC6E2B63D0020044EA9C /* Assets.xcassets */; };
 		C8AAAC722B63D0020044EA9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8AAAC702B63D0020044EA9C /* LaunchScreen.storyboard */; };
+		C8AAAC7A2B63D3C80044EA9C /* ProfileDesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AAAC792B63D3C80044EA9C /* ProfileDesignViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C8632D132B67389D00BD75E4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C8632D502B68FCF000BD75E4 /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
+		C8632D522B68FDF900BD75E4 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		C8632D542B68FE3000BD75E4 /* MiddleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleView.swift; sourceTree = "<group>"; };
+		C8632D562B68FE3900BD75E4 /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
+		C8632D582B690A3B00BD75E4 /* MiddleViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleViewCollectionViewCell.swift; sourceTree = "<group>"; };
 		C8AAAC622B63D0000044EA9C /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8AAAC652B63D0000044EA9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8AAAC672B63D0000044EA9C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C8AAAC692B63D0000044EA9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C8AAAC6C2B63D0000044EA9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C8AAAC692B63D0000044EA9C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C8AAAC6E2B63D0020044EA9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8AAAC712B63D0020044EA9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8AAAC732B63D0020044EA9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8AAAC792B63D3C80044EA9C /* ProfileDesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDesignViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +49,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C8632D352B6746A100BD75E4 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		C8632D362B6746B200BD75E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C8632D502B68FCF000BD75E4 /* CollectionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C8632D4D2B68FC8900BD75E4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C8632D582B690A3B00BD75E4 /* MiddleViewCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C8632D4E2B68FC9E00BD75E4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C8AAAC692B63D0000044EA9C /* MainViewController.swift */,
+				C8AAAC792B63D3C80044EA9C /* ProfileDesignViewController.swift */,
+				C8632D132B67389D00BD75E4 /* ProfileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C8632D4F2B68FCB100BD75E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C8632D522B68FDF900BD75E4 /* TopView.swift */,
+				C8632D542B68FE3000BD75E4 /* MiddleView.swift */,
+				C8632D562B68FE3900BD75E4 /* BottomView.swift */,
+				C8632D4D2B68FC8900BD75E4 /* Cell */,
+			);
+			name = Views;
+			path = Views/Views;
+			sourceTree = "<group>";
+		};
 		C8AAAC592B63D0000044EA9C = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +115,10 @@
 			children = (
 				C8AAAC652B63D0000044EA9C /* AppDelegate.swift */,
 				C8AAAC672B63D0000044EA9C /* SceneDelegate.swift */,
-				C8AAAC692B63D0000044EA9C /* ViewController.swift */,
-				C8AAAC6B2B63D0000044EA9C /* Main.storyboard */,
+				C8632D362B6746B200BD75E4 /* Model */,
+				C8632D4E2B68FC9E00BD75E4 /* Controllers */,
+				C8632D4F2B68FCB100BD75E4 /* Views */,
+				C8632D352B6746A100BD75E4 /* extensions */,
 				C8AAAC6E2B63D0020044EA9C /* Assets.xcassets */,
 				C8AAAC702B63D0020044EA9C /* LaunchScreen.storyboard */,
 				C8AAAC732B63D0020044EA9C /* Info.plist */,
@@ -127,7 +186,6 @@
 			files = (
 				C8AAAC722B63D0020044EA9C /* LaunchScreen.storyboard in Resources */,
 				C8AAAC6F2B63D0020044EA9C /* Assets.xcassets in Resources */,
-				C8AAAC6D2B63D0000044EA9C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +196,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8AAAC6A2B63D0000044EA9C /* ViewController.swift in Sources */,
+				C8632D572B68FE3900BD75E4 /* BottomView.swift in Sources */,
+				C8632D532B68FDF900BD75E4 /* TopView.swift in Sources */,
+				C8AAAC6A2B63D0000044EA9C /* MainViewController.swift in Sources */,
 				C8AAAC662B63D0000044EA9C /* AppDelegate.swift in Sources */,
+				C8632D592B690A3B00BD75E4 /* MiddleViewCollectionViewCell.swift in Sources */,
+				C8632D142B67389D00BD75E4 /* ProfileViewController.swift in Sources */,
+				C8AAAC7A2B63D3C80044EA9C /* ProfileDesignViewController.swift in Sources */,
+				C8632D552B68FE3000BD75E4 /* MiddleView.swift in Sources */,
 				C8AAAC682B63D0000044EA9C /* SceneDelegate.swift in Sources */,
+				C8632D512B68FCF000BD75E4 /* CollectionModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C8AAAC6B2B63D0000044EA9C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C8AAAC6C2B63D0000044EA9C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C8AAAC702B63D0020044EA9C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +354,6 @@
 				INFOPLIST_FILE = Instagram/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,7 +381,6 @@
 				INFOPLIST_FILE = Instagram/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
