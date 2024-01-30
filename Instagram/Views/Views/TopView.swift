@@ -11,7 +11,7 @@ class TopView: UIView {
     //    weak var delegate: TopViewDelegate?
     weak var controller: UIViewController?
     
-    var userName: UILabel!
+    private var userName: UILabel!
     var profileImageView = UIImageView()
     
     var followButton: UIButton!
@@ -47,7 +47,7 @@ class TopView: UIView {
     private func setupButton() {
         profileImageView = UIImageView()
         profileImageView.contentMode = .scaleAspectFit
-        profileImageView.image = UIImage(named: "logged-in-rtan")
+        profileImageView.image = UIImage(named: "Ellipse 1")
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(profileImageView)
         

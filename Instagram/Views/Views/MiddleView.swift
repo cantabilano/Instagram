@@ -6,14 +6,29 @@
 //
 
 protocol MiddleViewDelegate: AnyObject {
-    func menuButtonTapped()
+    func didTappedCollectionViewCell()
 }
 
 import UIKit
 
-class MiddleView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
-    weak var delegate: MiddleViewDelegate?
+class MiddleView: UIView, UICollectionViewDelegate {
+    //    weak var delegate: MiddleViewDelegate?
+    weak var middleViewdelegate: MiddleViewDelegate?
     // MARK: - UI Properties
+    
+    var dataSource: [CollectionModel] = []
+    var collectionViewImages: [CollectionModel] = [
+        CollectionModel(id: 0, name: "image0", imageName: "picture 0"),
+        CollectionModel(id: 1, name: "image1", imageName: "picture 1"),
+        CollectionModel(id: 2, name: "image2", imageName: "picture 2"),
+        CollectionModel(id: 3, name: "image3", imageName: "picture 3"),
+        CollectionModel(id: 4, name: "image4", imageName: "picture 4"),
+        CollectionModel(id: 5, name: "image5", imageName: "picture 5"),
+        CollectionModel(id: 6, name: "image6", imageName: "picture 6"),
+        CollectionModel(id: 7, name: "image7", imageName: "picture 7")
+    ]
+    
+    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         
@@ -30,23 +45,15 @@ class MiddleView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     // MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        dataSource = collectionViewImages
+        collectionView.reloadData()
         setUI()
+        
         
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MiddleCollectionViewCell.identifier, for: indexPath) as? MiddleCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-        return cell
     }
 }
 
@@ -54,7 +61,64 @@ extension MiddleView {
     private func setUI() {
         backgroundColor = .lightGray
         
+        addSubview(collectionView)
+        NSLayoutConstraint.activate([
+            collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: self.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
         heightAnchor.constraint(equalToConstant: 380).isActive = true
         widthAnchor.constraint(equalToConstant: 425).isActive = true
     }
 }
+
+
+// MARK: - UICollectionViewDataSource
+extension MiddleView: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MiddleCollectionViewCell.identifier, for: indexPath) as? MiddleCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        let collectionImage = dataSource[indexPath.row]
+        cell.configure(with: collectionImage)
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension MiddleView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 124, height: 124)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 2
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 2
+    }
+}
+//
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//        return CGSize(width: 400, height: 2)
+//    }
+//
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+//        return CGSize(width: 400, height: 2)
+//    }
+

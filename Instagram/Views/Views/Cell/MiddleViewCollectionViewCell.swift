@@ -11,6 +11,9 @@ class MiddleCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "MyCell"
     
+    // MARK: - UI Properties
+    private let imageView = UIImageView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -20,10 +23,24 @@ class MiddleCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Action Helpers
+    
+    func configure(with collectionImage: CollectionModel) {
+        imageView.image = UIImage(named: collectionImage.imageName)
+    }
 }
 
 extension MiddleCollectionViewCell {
     private func setupCell() {
-        backgroundColor = .blue
+        backgroundColor = .gray
+        imageView.contentMode = .scaleAspectFit
+        contentView.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            imageView.widthAnchor.constraint(equalToConstant: 124),
+            imageView.heightAnchor.constraint(equalToConstant: 124)
+        ])
     }
 }
