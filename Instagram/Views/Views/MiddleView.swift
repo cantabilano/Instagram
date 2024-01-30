@@ -14,8 +14,8 @@ import UIKit
 class MiddleView: UIView, UICollectionViewDelegate {
     //    weak var delegate: MiddleViewDelegate?
     weak var middleViewdelegate: MiddleViewDelegate?
-    // MARK: - UI Properties
     
+    // MARK: - UI Properties
     var dataSource: [CollectionModel] = []
     var collectionViewImages: [CollectionModel] = [
         CollectionModel(id: 0, name: "image0", imageName: "picture 0"),
@@ -38,6 +38,7 @@ class MiddleView: UIView, UICollectionViewDelegate {
         collectionView.dataSource = self
         collectionView.register(MiddleCollectionViewCell.self, forCellWithReuseIdentifier: MiddleCollectionViewCell.identifier)
         collectionView.backgroundColor = .white
+        collectionView.isScrollEnabled = true
         
         return collectionView
     }()
@@ -103,22 +104,12 @@ extension MiddleView: UICollectionViewDelegateFlowLayout {
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
+        return 1
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
+        return 1
     }
 }
-//
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        return CGSize(width: 400, height: 2)
-//    }
-//
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-//        return CGSize(width: 400, height: 2)
-//    }
 

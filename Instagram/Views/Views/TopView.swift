@@ -11,6 +11,7 @@ class TopView: UIView {
     //    weak var delegate: TopViewDelegate?
     weak var controller: UIViewController?
     
+    // MARK: - UI Properties
     private var userName: UILabel!
     var profileImageView = UIImageView()
     
@@ -118,6 +119,8 @@ class TopView: UIView {
         postLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         postLabel.font = UIFont(name: "OpenSans-Regular", size: 14)
         postLabel.textAlignment = .center
+        postLabel.numberOfLines = 1
+        postLabel.lineBreakMode = .byWordWrapping
         postLabel.attributedText = NSMutableAttributedString(string: "post", attributes: [NSAttributedString.Key.kern: -0.3])
         postLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(postLabel)
@@ -128,6 +131,8 @@ class TopView: UIView {
         followLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         followLabel.font = UIFont(name: "OpenSans-Regular", size: 14)
         followLabel.textAlignment = .center
+        followLabel.numberOfLines = 1
+        followLabel.lineBreakMode = .byWordWrapping
         followLabel.attributedText = NSMutableAttributedString(string: "follower", attributes: [NSAttributedString.Key.kern: -0.3])
         followLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(followLabel)
@@ -137,6 +142,8 @@ class TopView: UIView {
         followingLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         followingLabel.font = UIFont(name: "OpenSans-Regular", size: 14)
         followingLabel.textAlignment = .center
+        followingLabel.numberOfLines = 1
+        followingLabel.lineBreakMode = .byWordWrapping
         followingLabel.attributedText = NSMutableAttributedString(string: "following", attributes: [NSAttributedString.Key.kern: -0.3])
         followingLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(followingLabel)
@@ -202,10 +209,6 @@ class TopView: UIView {
             follwingNumber.topAnchor.constraint(equalTo: superView.topAnchor, constant: 116),
             follwingNumber.leadingAnchor.constraint(equalTo: followerNumber.trailingAnchor, constant: 72),
             
-//            var postLabel: UILabel!
-//            var followLabel: UILabel!
-//            var followingLabel: UILabel!
-            
             postLabel.widthAnchor.constraint(equalToConstant: 28),
             postLabel.heightAnchor.constraint(equalToConstant: 19),
             postLabel.topAnchor.constraint(equalTo: postNumber.bottomAnchor),
@@ -220,6 +223,11 @@ class TopView: UIView {
             followingLabel.heightAnchor.constraint(equalToConstant: 19),
             followingLabel.topAnchor.constraint(equalTo: follwingNumber.bottomAnchor),
             followingLabel.leadingAnchor.constraint(equalTo: followLabel.trailingAnchor, constant: 26),
+            
+            profileImageView.widthAnchor.constraint(equalToConstant: 88),
+            profileImageView.heightAnchor.constraint(equalToConstant: 88),
+            profileImageView.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: 14),
+            profileImageView.topAnchor.constraint(equalTo: superView.topAnchor, constant: 93),
             
             userName.centerXAnchor.constraint(equalTo: superView.centerXAnchor),
             userName.topAnchor.constraint(equalTo: superView.topAnchor, constant: 54),
@@ -244,11 +252,6 @@ class TopView: UIView {
             moreButton.heightAnchor.constraint(equalToConstant: 30),
             moreButton.leadingAnchor.constraint(equalTo: messageButton.trailingAnchor, constant: 8),
             moreButton.topAnchor.constraint(equalTo: superView.topAnchor, constant: 265),
-            
-            profileImageView.widthAnchor.constraint(equalToConstant: 88),
-            profileImageView.heightAnchor.constraint(equalToConstant: 88),
-            profileImageView.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: 14),
-            profileImageView.topAnchor.constraint(equalTo: superView.topAnchor, constant: 93),
             
             profileName.widthAnchor.constraint(equalToConstant: 200),
             profileName.heightAnchor.constraint(equalToConstant: 19),
