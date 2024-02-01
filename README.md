@@ -12,7 +12,7 @@
 <br><br>
 ## 🛠️ 사용한 기술 스택 <p>
 <img width="91" alt="스크린샷 2024-02-01 12 03 18" src="https://github.com/cantabilano/Instagram/assets/88497383/ad166bc4-1247-4524-93c2-342d3954660b">
-
+<img width="175" alt="스크린샷 2024-02-01 12 09 46" src="https://github.com/cantabilano/Instagram/assets/88497383/44a5079d-a617-4b0f-97c5-afa10682cbc2">
 
 <br><br>
 ## 🖋️ 과제 결과물 <p>
