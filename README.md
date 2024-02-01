@@ -1,4 +1,4 @@
-# nbcamp-Assignment-ToDoList
+# nbcamp-Assignment-Instagram
 [내일배움캠프 iOS트랙] 심화 주차 개인 과제
 
 
@@ -11,7 +11,7 @@
 
 <br><br>
 ## 🛠️ 사용한 기술 스택 <p>
-<img width="98" alt="스크린샷 2024-02-01 12 02 32" src="https://github.com/cantabilano/Instagram/assets/88497383/ded8d183-bfef-46d5-a173-0f0521cac714">
+<img width="91" alt="스크린샷 2024-02-01 12 03 18" src="https://github.com/cantabilano/Instagram/assets/88497383/ad166bc4-1247-4524-93c2-342d3954660b">
 
 
 <br><br>
