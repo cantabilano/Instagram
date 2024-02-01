@@ -11,7 +11,7 @@
 
 <br><br>
 ## 🛠️ 사용한 기술 스택 <p>
-<img src=https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png>
+<img width="356" alt="스크린샷 2024-02-01 11 55 02" src="https://github.com/cantabilano/Instagram/assets/88497383/241581c7-d46d-4213-9724-2a4d2f5e31a7">
 
 
 <br><br>
