@@ -16,7 +16,9 @@
 
 <br><br>
 ## 🖋️ 과제 결과물 <p>
-<img src=https://github.com/cantabilano/ToDowithData/assets/88497383/1454680b-1753-4010-8e05-d12fe54d2287>
+<img width="356" alt="스크린샷 2024-02-01 11 55 02" src="https://github.com/cantabilano/Instagram/assets/88497383/241581c7-d46d-4213-9724-2a4d2f5e31a7">
+<img width="368" alt="스크린샷 2024-02-01 11 55 08" src="https://github.com/cantabilano/Instagram/assets/88497383/adfe9a4d-20dd-4c6f-b87e-935b6c77fa5f">
+<img width="371" alt="스크린샷 2024-02-01 11 55 14" src="https://github.com/cantabilano/Instagram/assets/88497383/b6578339-0aa1-4b81-a36d-bb1020c545dd">
 
 
 <br><br><br>
