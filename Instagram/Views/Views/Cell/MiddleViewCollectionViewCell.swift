@@ -9,7 +9,7 @@ import UIKit
 
 class MiddleCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "MyCell"
+    static let identifier = String(describing: MiddleCollectionViewCell.self)
     
     // MARK: - UI Properties
     private let imageView = UIImageView()
