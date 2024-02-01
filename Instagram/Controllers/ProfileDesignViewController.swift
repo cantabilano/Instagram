@@ -9,21 +9,22 @@ import UIKit
 import SwiftUI
 //DataManager로 코어데이터를 적용하자. 
 
-final class ProfileDesignViewController: UIViewController{
+final class ProfileDesignViewController: UITabBarController {
     
     // MARK: - UI Properties
     private lazy var stackView: UIStackView = { createStackView() }()
     
     private let topView = TopView()
     private let middleView = MiddleView()
-    private let bottomView = BottomView()
+//    private let bottomView = BottomView()
     
-    var menuButton: UIButton!
+    var profileButton: UIButton!
     var userName: UILabel!
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupUI()
         setLayout()
         setupButton()
@@ -36,11 +37,19 @@ final class ProfileDesignViewController: UIViewController{
 extension ProfileDesignViewController {
     private func setupUI() {
         view.backgroundColor = .white
+
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         topView.translatesAutoresizingMaskIntoConstraints = false
         middleView.translatesAutoresizingMaskIntoConstraints = false
-        bottomView.translatesAutoresizingMaskIntoConstraints = false
+//        bottomView.translatesAutoresizingMaskIntoConstraints = false
+        
+        // 스택뷰의 bottomView를 tabBarItem으로 대체
+        let profileViewController = ProfileViewController()
+        let profileViewNavigationController = UINavigationController(rootViewController: profileViewController)
+        profileViewNavigationController.tabBarItem = UITabBarItem(title: "profile", image: UIImage(named: "Profile"), selectedImage: UIImage(named: "Profile") )
+        self.tabBar.tintColor = .black
+        viewControllers = [profileViewNavigationController]
         
     }
     
@@ -51,7 +60,7 @@ extension ProfileDesignViewController {
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+//            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     
@@ -62,78 +71,57 @@ extension ProfileDesignViewController {
         stackView.distribution = .fill
         stackView.alignment = .fill
         
-        [topView, middleView, bottomView].forEach { stackView.addArrangedSubview($0) }
+        [topView, middleView].forEach { stackView.addArrangedSubview($0) } //bottomView
         return stackView
     }
     
     // MARK: - UIButton Setup
     private func setupButton() {
-        menuButton = UIButton(type: .system)
+        profileButton = UIButton(type: .system)
         if let image = UIImage(systemName: "list.dash") {
-            menuButton.setImage(image, for: .normal)
+            profileButton.setImage(image, for: .normal)
         }
-        menuButton.tintColor = .black
-        menuButton.backgroundColor = .white
-        menuButton.addTarget(self, action: #selector(menuButtonTapped), for: .touchUpInside)
-        menuButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(menuButton)
+        profileButton.tintColor = .black
+        profileButton.backgroundColor = .white
+        profileButton.addTarget(self, action: #selector(menuButtonTapped), for: .touchUpInside)
+        profileButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(profileButton)
     }
     // MARK: - UILabel Setup
     private func setupLabel() {
-        userName = UILabel()
-        userName.frame = CGRect(x: 0, y: 0, width: 97, height: 25)
-        userName.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        userName.font = UIFont(name: "OpenSans-Bold", size: 18)
-        userName.textAlignment = .center
-        userName.attributedText = NSMutableAttributedString(string: "nabaecamp", attributes: [NSAttributedString.Key.kern: -1])
-        userName.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(userName)
+
     }
     
     // MARK: - @objc
     @objc private func menuButtonTapped() {
         print("menuTapped")
-        let profileViewController = ProfileViewController()
-        present(profileViewController, animated: true)
+        showMyViewControllerInACustomizedSheet()
+//        let menuViewController = MenuViewController()
+//        present(menuViewController, animated: true)
+        
     }
     // MARK: - Constraints
     func profileDesignViewConstraints() {
         NSLayoutConstraint.activate([
-            menuButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 338),
-            menuButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 58),
-            menuButton.widthAnchor.constraint(equalToConstant: 21),
-            menuButton.heightAnchor.constraint(equalToConstant: 17.5),
-            
-            userName.widthAnchor.constraint(equalToConstant: 97),
-            userName.heightAnchor.constraint(equalToConstant: 25),
-            userName.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 139),
-            userName.topAnchor.constraint(equalTo: view.topAnchor, constant: 54)
+            profileButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 338),
+            profileButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 58),
+            profileButton.widthAnchor.constraint(equalToConstant: 21),
+            profileButton.heightAnchor.constraint(equalToConstant: 17.5),
         ])
     }
 }
 
-// MARK: - Preview
-struct PreView: PreviewProvider {
-    static var previews: some View {
-        ProfileDesignViewController().toPreview()
-    }
-}
-
-#if DEBUG
-extension UIViewController {
-    private struct Preview: UIViewControllerRepresentable {
-        let viewController: UIViewController
-        
-        func makeUIViewController(context: Context) -> UIViewController {
-            return viewController
+extension ProfileDesignViewController {
+    func showMyViewControllerInACustomizedSheet() {
+        let viewControllerToPresent = ProfileViewController()
+        if let sheet = viewControllerToPresent.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.largestUndimmedDetentIdentifier = .medium
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
         }
-        
-        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-        }
+        present(viewControllerToPresent, animated: true, completion: nil)
     }
     
-    func toPreview() -> some View {
-        Preview(viewController: self)
-    }
 }
-#endif
