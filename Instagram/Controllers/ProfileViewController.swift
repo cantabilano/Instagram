@@ -93,7 +93,7 @@ class ProfileViewController: UIViewController {
             guard let context = self.persistentContainer?.viewContext else { return }
 
             let fetchRequest = Task.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "name == %@", name)
+            fetchRequest.predicate = NSPredicate(format: "name == 양준현", name)
 
             do {
                 let users = try context.fetch(fetchRequest)
@@ -111,7 +111,7 @@ class ProfileViewController: UIViewController {
             guard let context = self.persistentContainer?.viewContext else { return }
 
             let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest() // NSFetchRequest<Task> 타입의 객체를 반환을 명시
-            fetchRequest.predicate = NSPredicate(format: "name == %@", name)
+            fetchRequest.predicate = NSPredicate(format: "name == 양준현", name)
 
             do {
                 let users = try context.fetch(fetchRequest)

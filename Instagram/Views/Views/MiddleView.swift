@@ -25,13 +25,20 @@ class MiddleView: UIView, UICollectionViewDelegate {
         CollectionModel(id: 4, name: "image4", imageName: "picture 4"),
         CollectionModel(id: 5, name: "image5", imageName: "picture 5"),
         CollectionModel(id: 6, name: "image6", imageName: "picture 6"),
-        CollectionModel(id: 7, name: "image7", imageName: "picture 7")
+        CollectionModel(id: 7, name: "image7", imageName: "picture 7"),
+        CollectionModel(id: 8, name: "image0", imageName: "picture 0"),
+        CollectionModel(id: 9, name: "image1", imageName: "picture 1"),
+        CollectionModel(id: 10, name: "image2", imageName: "picture 2"),
+        CollectionModel(id: 11, name: "image3", imageName: "picture 3"),
+        CollectionModel(id: 12, name: "image4", imageName: "picture 4"),
+        CollectionModel(id: 13, name: "image5", imageName: "picture 5"),
+        CollectionModel(id: 14, name: "image6", imageName: "picture 6"),
+        CollectionModel(id: 15, name: "image7", imageName: "picture 7")
     ]
-    
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        
+            layout.scrollDirection = .horizontal  // 스크롤 방향을 수평으로 설정
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
@@ -46,11 +53,11 @@ class MiddleView: UIView, UICollectionViewDelegate {
     // MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         dataSource = collectionViewImages
         collectionView.reloadData()
         setUI()
-        
-        
+
     }
     
     required init?(coder: NSCoder) {
@@ -63,14 +70,17 @@ extension MiddleView {
         backgroundColor = .white
         
         addSubview(collectionView)
+        
+        heightAnchor.constraint(equalToConstant: 380).isActive = true
+        widthAnchor.constraint(equalToConstant: 425).isActive = true
+        
         NSLayoutConstraint.activate([
+            
             collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             collectionView.topAnchor.constraint(equalTo: self.topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
         ])
-        heightAnchor.constraint(equalToConstant: 380).isActive = true
-        widthAnchor.constraint(equalToConstant: 425).isActive = true
     }
 }
 
@@ -111,5 +121,6 @@ extension MiddleView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 1
     }
+    
 }
 
