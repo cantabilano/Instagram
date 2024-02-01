@@ -12,24 +12,24 @@ class TopView: UIView {
     weak var controller: UIViewController?
     
     // MARK: - UI Properties
-    private var userName: UILabel!
+    var userName: UILabel!
     var profileImageView = UIImageView()
     
-    var followButton: UIButton!
-    var messageButton: UIButton!
-    var moreButton: UIButton!
+    private var followButton: UIButton!
+    private var messageButton: UIButton!
+    private var moreButton: UIButton!
     
-    var postNumber: UILabel!
-    var followerNumber: UILabel!
-    var follwingNumber: UILabel!
+    private var postNumber: UILabel!
+    private var followerNumber: UILabel!
+    private var follwingNumber: UILabel!
     
-    var postLabel: UILabel!
-    var followLabel: UILabel!
-    var followingLabel: UILabel!
+    private var postLabel: UILabel!
+    private var followLabel: UILabel!
+    private var followingLabel: UILabel!
     
-    var profileName: UILabel!
-    var profileDescription: UILabel!
-    var profileAddress: UILabel!
+    private var profileName: UILabel!
+    private var profileDescription: UILabel!
+    private var profileAddress: UILabel!
     
     // MARK: - Life Cycle
     override init(frame: CGRect) {

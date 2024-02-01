@@ -60,7 +60,7 @@ class MiddleView: UIView, UICollectionViewDelegate {
 
 extension MiddleView {
     private func setUI() {
-        backgroundColor = .lightGray
+        backgroundColor = .white
         
         addSubview(collectionView)
         NSLayoutConstraint.activate([
